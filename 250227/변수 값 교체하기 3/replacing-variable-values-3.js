@@ -1,5 +1,5 @@
 let [a, b] = [3, 5];
-[a, b] = [];
+[a, b] = [b, a];
 
-console.log(`5
-3`);
+console.log(a);
+console.log(b);
