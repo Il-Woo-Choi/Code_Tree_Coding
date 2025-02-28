@@ -14,9 +14,9 @@ if(n % 2 == 1){
         if(n == 2){
             console.log("28");
         } else{
-            console.log("31");
+            console.log("30");
         }
     } else{
-        console.log("30");
+        console.log("31");
     }
 }
