@@ -8,11 +8,11 @@ for(let i = 1; i <= 100; i++){
     sum += i;
     if(sum >= N){
         if(N == 1){
-            sum;
+            break;
         } else {
             sum -= i;
+            break;
         }
-        break;
     }
 }
 
