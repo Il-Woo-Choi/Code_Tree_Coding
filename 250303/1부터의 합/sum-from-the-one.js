@@ -7,7 +7,11 @@ let sum = 0;
 for(let i = 1; i <= 100; i++){
     sum += i;
     if(sum >= N){
-        sum -= i;
+        if(N == 1){
+            sum;
+        } else {
+            sum -= i;
+        }
         break;
     }
 }
