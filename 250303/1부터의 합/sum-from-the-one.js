@@ -1,19 +1,11 @@
 const fs = require("fs");
-let input = fs.readFileSync(0).toString().trim();
-
-let N = Number(input);
+let n = Number(fs.readFileSync(0).toString().trim());
 let sum = 0;
 
-for(let i = 1; i <= 100; i++){
-    sum += i;
-    if(sum >= N){
-        if(N == 1){
-            break;
-        } else {
-            sum -= i;
-            break;
-        }
+for (let i = 1; i <= 100; i++) {
+    sumVal += i;
+    if (sumVal >= n) {
+        console.log(i);
+        break;
     }
 }
-
-console.log(sum);
