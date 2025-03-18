@@ -7,7 +7,7 @@ let str = "";
 for(let i = N; i > 0; i--){
     str = "";
     for(let j = N; j > 0; j--){
-        str += "(" + i + "," + j + ") ";
+        str += `(${i},${j}) `;
     }
     console.log(str);
 }
