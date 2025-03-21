@@ -7,9 +7,7 @@ let cnt = 1;
 
 for(let i = 0; i < N; i++){
     str = "";
-    if(cnt >= 9){
-        cnt = 1;
-    }
+    
     for(let j = 0; j < i; j++){
         str += "  ";
     }
@@ -17,6 +15,10 @@ for(let i = 0; i < N; i++){
     for(let j = 0; j < N - i; j++){
         str += cnt + " ";
         cnt++;
+
+        if(cnt >= 10){
+            cnt = 1;
+        }
     }
 
     console.log(str);
