@@ -18,6 +18,6 @@ for(let i = 0; i < a.length; i++){
     sum += a[i];
 }
 
-avg = (sum / a.length);
+avg = (sum / a.length).toFixed(1);
 
 console.log(`${sum} ${avg}`);
