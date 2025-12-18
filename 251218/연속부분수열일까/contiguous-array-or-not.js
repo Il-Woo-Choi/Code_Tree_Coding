@@ -13,7 +13,12 @@ for(let i = 0; i < A.length; i++){
                 count++;
             }
         }
-        break;
+
+        if(count !== B.length){
+            continue;
+        } else {
+            break;
+        }
     }
 }
 
