@@ -8,17 +8,18 @@ let count = 0;
 
 for(let i = 0; i < A.length; i++){
     if(A[i] === B[0]){
+        count = 0;
         for(let j = 0; j < B.length; j++){
             if(A[i+j] === B[j]){
                 count++;
+            } else {
+                break;
             }
         }
+    }
 
-        if(count !== B.length){
-            continue;
-        } else {
-            break;
-        }
+    if(count === B.length){
+        break;
     }
 }
 
