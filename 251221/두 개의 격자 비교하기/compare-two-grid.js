@@ -8,17 +8,17 @@ let m = a[1];
 let arr1 = [];
 let arr2 = [];
 
-for(let i = 1; i < 5; i++){
+for(let i = 1; i <= n; i++){
     arr1.push(input[i].split(" ").map(Number));
 }
 
-for(let i = 5; i < 9; i++){
+for(let i = n + 1; i <= 2 * n; i++){
     arr2.push(input[i].split(" ").map(Number));
 }
 
-for(let i = 0; i < 4; i++){
+for(let i = 0; i < n; i++){
     let str = "";
-    for(let j = 0; j < 4; j++){
+    for(let j = 0; j < m; j++){
         if(arr1[i][j] === arr2[i][j]){
             str += 0 + " ";
         } else {
