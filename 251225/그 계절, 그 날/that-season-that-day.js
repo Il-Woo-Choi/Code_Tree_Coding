@@ -1,36 +1,28 @@
+const isLeapYear = (Y) => {
+    if (Y % 400 === 0) return true;
+    if (Y % 100 === 0) return false;
+    if (Y % 4 === 0) return true;
+    return false;
+};
 
-const weatherExist = (Y) => {
-    let yunYear = false;
-    if(yunYear % 4 === 0 && yunYear % 100 === 0 && yunYear % 400 === 0){
-        yunYear = true;
-    } else if(yunYear % 4 === 0 && yunYear % 100 !== 0){
-        yunYear = true;
-    } else if(yunYear % 4 === 0){
-        yunYear = true;
+const canExist = (Y, M, D) => {
+    if (M < 1 || M > 12) return false;
+
+    let daysInMonth = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    if (isLeapYear(Y)) {
+        daysInMonth[2] = 29;
     }
 
-    return yunYear;
-}
+    return D >= 1 && D <= daysInMonth[M];
+};
 
-const whatsTheWeather = (Y, M, D) => {
-    if(M > 12 || M < 1 || D > 31 || D < 1){
-        return -1;
-    } else if(M % 2 === 0 && D > 30){
-        return -1;
-    } else if(M % 2 === 1 && D > 31){
-        return -1;
-    } else if(weatherExist(Y) === false && M === 2 && D === 29){
-        return -1;
-    } else if(M >= 3 && M < 6){
-        return "Spring";
-    } else if(M >= 6 && M < 9){
-        return "Summer";
-    } else if(M >= 9 && M < 12){
-        return "Fall";
-    } else {
-        return "Winter";
-    }
-}
+const getSeason = (M) => {
+    if (M >= 3 && M <= 5) return "Spring";
+    if (M >= 6 && M <= 8) return "Summer";
+    if (M >= 9 && M <= 11) return "Fall";
+    return "Winter"; 
+};
 
 const fs = require("fs");
 let input = fs.readFileSync(0).toString().trim().split(" ");
@@ -39,5 +31,8 @@ let Y = Number(input[0]);
 let M = Number(input[1]);
 let D = Number(input[2]);
 
-let ans = whatsTheWeather(Y, M, D);
-console.log(ans);
+if (canExist(Y, M, D)) {
+    console.log(getSeason(M));
+} else {
+    console.log(-1);
+}
