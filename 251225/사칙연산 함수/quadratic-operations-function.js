@@ -11,7 +11,7 @@ const multi = (a, b) => {
 }
 
 const divide = (a, b) => {
-    return parsInt(a/b);
+    return parseInt(a/b);
 }
 
 const fs = require("fs");
