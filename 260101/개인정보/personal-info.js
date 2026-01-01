@@ -31,7 +31,7 @@ arr.sort((a, b) => {
 
 console.log("name");
 for(let i = 0; i < 5; i++){
-    console.log(`${arr[i].name} ${arr[i].height} ${arr[i].weight}`);
+    console.log(`${arr[i].name} ${arr[i].height} ${arr[i].weight.toFixed(1)}`);
 }
 
 arr.sort((a, b) => {
@@ -48,5 +48,5 @@ arr.sort((a, b) => {
 
 console.log("\nheight");
 for(let i = 0; i < 5; i++){
-    console.log(`${arr[i].name} ${arr[i].height} ${arr[i].weight}`);
+    console.log(`${arr[i].name} ${arr[i].height} ${arr[i].weight.toFixed(1)}`);
 }
