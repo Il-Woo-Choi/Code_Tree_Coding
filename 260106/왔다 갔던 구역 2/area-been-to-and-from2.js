@@ -17,18 +17,19 @@ for(let i = 0; i < n; i++){
     
     if(b === "R"){
         for(let j = 0; j < a; j++){
-            ans[count+j] += 1;
+            ans[count]++;
             count++;
         }
     } else {
         for(let j = 0; j < a; j++){
-            ans[count-j] += 1;
             count--;
+            ans[count]++;
+            
         }
     }
 }
 
-let finAnswer = 1;
+let finAnswer = 0;
 
 for(let i = 0;  i < ans.length; i++){
     if(ans[i] >= 2){
